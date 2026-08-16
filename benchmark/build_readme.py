@@ -483,7 +483,7 @@ def main():
         "### 1. Clone",
         "",
         "```bash",
-        "git clone <repository-url>",
+        "git clone https://github.com/damanjeetsingh58747/cognodb-benchmark.git",
         "cd cognodb-benchmark",
         "```",
         "",
