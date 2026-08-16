@@ -1,0 +1,15 @@
+# Secrets
+.env
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
+
+# Downloaded / generated dataset files
+data/ml-100k/
+data/ml-100k.zip
+data/processed/

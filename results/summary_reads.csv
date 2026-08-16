@@ -1,0 +1,31 @@
+platform,workload,p50_ms,p95_ms,p99_ms,mean_ms,stdev_ms
+CognoDB,point_lookup,306.998,383.386,558.887,315.06,46.173
+CognoDB,indexed_lookup,532.953,615.856,620.077,483.832,139.452
+CognoDB,traversal_1hop,308.471,616.58,638.73,385.645,131.734
+CognoDB,traversal_2hop,592.112,1189.455,1491.154,616.831,268.873
+CognoDB,traversal_3hop,388.921,976.476,3605.356,665.576,1848.765
+CognoDB,aggregation_rating_counts,614.403,920.949,935.926,634.48,126.59
+Neo4j AuraDB,point_lookup,79.618,89.584,100.738,80.012,8.561
+Neo4j AuraDB,indexed_lookup,79.392,89.602,99.598,82.433,37.75
+Neo4j AuraDB,traversal_1hop,79.724,92.782,98.054,83.739,39.868
+Neo4j AuraDB,traversal_2hop,85.396,100.667,119.352,89.894,39.433
+Neo4j AuraDB,traversal_3hop,81.843,93.098,96.549,85.833,36.348
+Neo4j AuraDB,aggregation_rating_counts,100.862,114.644,419.605,109.141,50.373
+FalkorDB,point_lookup,307.488,633.059,693.862,368.646,143.962
+FalkorDB,indexed_lookup,308.171,615.256,659.596,378.288,142.189
+FalkorDB,traversal_1hop,293.643,547.334,613.871,315.233,91.113
+FalkorDB,traversal_2hop,274.535,614.962,653.301,352.079,140.473
+FalkorDB,traversal_3hop,306.233,614.574,638.568,352.961,126.718
+FalkorDB,aggregation_rating_counts,301.775,356.453,473.177,310.381,37.82
+Memgraph,point_lookup,342.475,639.254,661.444,389.715,134.447
+Memgraph,indexed_lookup,321.955,622.396,647.456,389.768,137.6
+Memgraph,traversal_1hop,308.95,615.521,658.83,379.169,131.831
+Memgraph,traversal_2hop,321.364,615.778,655.791,372.621,122.916
+Memgraph,traversal_3hop,294.509,615.605,683.66,367.805,150.793
+Memgraph,aggregation_rating_counts,326.837,614.997,637.066,399.494,129.348
+ArangoDB,point_lookup,304.518,615.032,641.412,355.795,115.823
+ArangoDB,indexed_lookup,302.443,613.746,619.146,348.157,101.717
+ArangoDB,traversal_1hop,298.557,614.326,624.435,350.755,107.282
+ArangoDB,traversal_2hop,1663.782,4347.129,5810.906,1984.265,1240.757
+ArangoDB,traversal_3hop,544.969,3234.546,7664.084,953.37,1299.874
+ArangoDB,aggregation_rating_counts,429.638,695.58,919.466,480.047,153.228

@@ -1,0 +1,94 @@
+{
+  "platform": "FalkorDB Cloud Free",
+  "mix": {
+    "reads_percent": 90,
+    "writes_percent": 10
+  },
+  "warmup_seconds": 5,
+  "measurement_seconds": 20,
+  "concurrency_levels": [
+    1,
+    10,
+    40
+  ],
+  "results": [
+    {
+      "concurrency": 1,
+      "duration_seconds": 20.00542362499982,
+      "completed_queries": 68,
+      "read_queries": 62,
+      "write_queries": 6,
+      "errors": 0,
+      "qps": 3.3990782337157635,
+      "read_qps": 3.099159566034961,
+      "write_qps": 0.29991866768080266,
+      "all_latency": {
+        "p50_ms": 249.41947900000002,
+        "p95_ms": 501.6839955999999,
+        "mean_ms": 294.18698163235297
+      },
+      "read_latency": {
+        "p50_ms": 248.715104,
+        "p95_ms": 513.7435270999997,
+        "mean_ms": 293.9521183064516
+      },
+      "write_latency": {
+        "p50_ms": 256.1771875,
+        "p95_ms": 431.90985375,
+        "mean_ms": 296.61390266666666
+      }
+    },
+    {
+      "concurrency": 10,
+      "duration_seconds": 20.22127200011164,
+      "completed_queries": 806,
+      "read_queries": 730,
+      "write_queries": 76,
+      "errors": 0,
+      "qps": 39.8590157926539,
+      "read_qps": 36.100597430071154,
+      "write_qps": 3.7584183625827503,
+      "all_latency": {
+        "p50_ms": 246.831521,
+        "p95_ms": 265.6134785,
+        "mean_ms": 249.00792205086847
+      },
+      "read_latency": {
+        "p50_ms": 246.723167,
+        "p95_ms": 266.12871005,
+        "mean_ms": 249.15177100821919
+      },
+      "write_latency": {
+        "p50_ms": 249.649125,
+        "p95_ms": 261.5148645,
+        "mean_ms": 247.6262149605263
+      }
+    },
+    {
+      "concurrency": 40,
+      "duration_seconds": 20.23515445785597,
+      "completed_queries": 3138,
+      "read_queries": 2849,
+      "write_queries": 289,
+      "errors": 0,
+      "qps": 155.07665170214318,
+      "read_qps": 140.79457638604396,
+      "write_qps": 14.282075316099228,
+      "all_latency": {
+        "p50_ms": 255.308333,
+        "p95_ms": 275.31823739999993,
+        "mean_ms": 256.7875397584449
+      },
+      "read_latency": {
+        "p50_ms": 255.306333,
+        "p95_ms": 276.5428328,
+        "mean_ms": 256.8435061460161
+      },
+      "write_latency": {
+        "p50_ms": 255.310333,
+        "p95_ms": 270.4825914,
+        "mean_ms": 256.2358157508651
+      }
+    }
+  ]
+}

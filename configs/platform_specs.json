@@ -1,0 +1,89 @@
+{
+  "benchmark_date": "2026-08-16",
+  "client": {
+    "machine": "Damanjeet's MacBook Pro",
+    "benchmark_client_same_for_all_platforms": true
+  },
+  "platforms": {
+    "cognodb": {
+      "name": "CognoDB Cloud",
+      "tier": "Free c0",
+      "managed": true,
+      "cloud_region": "N. Virginia / us-east4",
+      "ram": "512 MB",
+      "vcpu": "burstable to 0.5 vCPU",
+      "storage": "1 GiB",
+      "connections": 200,
+      "resource_source": "Observed directly in CognoDB provisioning console on benchmark date",
+      "notes": [
+        "Assignment PDF described the c0 tier as 256 MB RAM, but the live provisioning console exposed 512 MB RAM.",
+        "Live console configuration was recorded and used as the actual benchmark environment."
+      ]
+    },
+
+    "neo4j": {
+      "name": "Neo4j AuraDB",
+      "tier": "AuraDB Free",
+      "managed": true,
+      "cloud_region": "Not observable/captured",
+      "ram": "Not observable",
+      "vcpu": "Not observable",
+      "storage": "Not observable",
+      "resource_source": "AuraDB Free console/public tier information",
+      "notes": [
+        "Free tier exposes graph-capacity limits but does not expose a fixed RAM/vCPU allocation in the benchmark console.",
+        "Hardware parity with CognoDB cannot therefore be independently verified."
+      ]
+    },
+
+    "falkordb": {
+      "name": "FalkorDB Cloud",
+      "tier": "Free",
+      "managed": true,
+      "cloud_provider": "AWS",
+      "cloud_region": "us-east-1",
+      "ram": "100 MB",
+      "vcpu": "Not observable",
+      "storage": "In-memory free tier; persistence not included",
+      "resource_source": "FalkorDB Free tier documentation and deployment console",
+      "notes": [
+        "100 MB RAM is below CognoDB c0's observed 512 MB allocation.",
+        "Free tier does not provide TLS, persistence, or backups."
+      ]
+    },
+
+    "memgraph": {
+      "name": "Memgraph Cloud",
+      "tier": "14-day Free Trial",
+      "managed": true,
+      "cloud_provider": "AWS",
+      "cloud_region": "Not captured",
+      "ram": "2 GB",
+      "vcpu": "2 CPU",
+      "storage": "Not observable",
+      "version": "3.12.0",
+      "resource_source": "Observed directly in Memgraph project creation console",
+      "notes": [
+        "This trial allocation is materially larger than CognoDB c0.",
+        "Results therefore include a resource-tier advantage and should not be interpreted as hardware-normalized engine performance."
+      ]
+    },
+
+    "arangodb": {
+      "name": "ArangoDB Managed Platform",
+      "tier": "14-day Trial",
+      "managed": true,
+      "cloud_provider": "Google Cloud Platform",
+      "cloud_region": "Iowa, USA",
+      "ram": "Not observable",
+      "vcpu": "Not observable",
+      "storage": "Not observable",
+      "version": "3.12.10",
+      "resource_source": "Observed directly in Arango Managed Platform deployment console",
+      "notes": [
+        "Exact compute allocation was not exposed in the deployment overview used during benchmarking.",
+        "AQL was used instead of Cypher while preserving equivalent logical workloads."
+      ]
+    }
+  }
+}
