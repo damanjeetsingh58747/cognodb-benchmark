@@ -1,7 +1,7 @@
 {
   "platform": "FalkorDB Cloud Free",
   "dataset": "MovieLens 100K",
-  "timestamp_utc": "2026-08-15T22:34:17.453521+00:00",
+  "timestamp_utc": "2026-08-16T00:48:17.164192+00:00",
   "client": {
     "python": "3.14.3",
     "os": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
@@ -21,18 +21,18 @@
     "relationships": 100000
   },
   "timings_seconds": {
-    "reset": 0.4428923341911286,
-    "schema": 0.5459321250673383,
-    "user_nodes": 0.761581749888137,
-    "movie_nodes": 1.6536040420178324,
-    "all_nodes": 2.4151857919059694,
-    "relationships": 37.50392695795745,
-    "verification": 1.7922265420202166,
-    "end_to_end": 42.700608500046656
+    "reset": 0.3454596670344472,
+    "schema": 1.1902153328992426,
+    "user_nodes": 0.7630467920098454,
+    "movie_nodes": 2.448474292177707,
+    "all_nodes": 3.2115210841875523,
+    "relationships": 41.94851370807737,
+    "verification": 1.2256820418406278,
+    "end_to_end": 47.921751792076975
   },
   "throughput": {
-    "nodes_per_second": 1086.872905925988,
-    "relationships_per_second": 2666.387445562747
+    "nodes_per_second": 817.3696921762761,
+    "relationships_per_second": 2383.87468733474
   },
   "verification": {
     "users": 943,

@@ -1,7 +1,7 @@
 {
   "platform": "Neo4j AuraDB Free",
   "dataset": "MovieLens 100K",
-  "timestamp_utc": "2026-08-15T22:11:05.825079+00:00",
+  "timestamp_utc": "2026-08-16T00:46:08.086972+00:00",
   "client": {
     "python": "3.14.3",
     "os": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
@@ -18,18 +18,18 @@
     "relationships": 100000
   },
   "timings_seconds": {
-    "reset": 0.08493533311411738,
-    "schema": 0.2143536249641329,
-    "user_nodes": 0.3307738748844713,
-    "movie_nodes": 0.47216662485152483,
-    "all_nodes": 0.8029404997359961,
-    "relationships": 20.26770587498322,
-    "verification": 0.28930858382955194,
-    "end_to_end": 21.659572208998725
+    "reset": 4.214987250044942,
+    "schema": 0.44021925004199147,
+    "user_nodes": 0.3186357500962913,
+    "movie_nodes": 0.4447519578970969,
+    "all_nodes": 0.7633877079933882,
+    "relationships": 19.38874866697006,
+    "verification": 0.2913250830024481,
+    "end_to_end": 25.099094541044906
   },
   "throughput": {
-    "nodes_per_second": 3269.2335246049865,
-    "relationships_per_second": 4933.957529126754
+    "nodes_per_second": 3438.619685009043,
+    "relationships_per_second": 5157.630423584593
   },
   "verification": {
     "users": 943,
