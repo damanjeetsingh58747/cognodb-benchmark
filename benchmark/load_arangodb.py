@@ -158,6 +158,11 @@ def main():
         unique=True,
     )
 
+    movies_col.add_persistent_index(
+        fields=["release_year"],
+        unique=False,
+    )
+
     schema_seconds = (
         time.perf_counter() - schema_start
     )

@@ -103,6 +103,10 @@ def main() -> None:
                 "CREATE CONSTRAINT FOR (m:Movie) "
                 "REQUIRE m.movie_id IS UNIQUE"
             ),
+            (
+                "CREATE INDEX FOR (m:Movie) "
+                "ON (m.release_year)"
+            ),
         ]
 
         for query in constraints:

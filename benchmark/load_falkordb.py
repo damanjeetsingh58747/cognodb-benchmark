@@ -141,6 +141,10 @@ def main():
         "CREATE INDEX FOR (m:Movie) ON (m.movie_id)"
     )
 
+    graph.query(
+        "CREATE INDEX FOR (m:Movie) ON (m.release_year)"
+    )
+
     schema_seconds = time.perf_counter() - schema_start
     print(f"      Schema setup: {schema_seconds:.3f}s")
 

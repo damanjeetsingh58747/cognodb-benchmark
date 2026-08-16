@@ -99,6 +99,7 @@ def main() -> None:
             "CREATE CONSTRAINT ON (m:Movie) ASSERT m.movie_id IS UNIQUE",
             "CREATE INDEX ON :User(user_id)",
             "CREATE INDEX ON :Movie(movie_id)",
+            "CREATE INDEX ON :Movie(release_year)",
         ]
 
         for query in schema_queries:
