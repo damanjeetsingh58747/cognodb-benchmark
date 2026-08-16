@@ -209,7 +209,7 @@ This is **not pure network RTT**, but it helps expose the baseline client-to-man
 
 ### Why this matters
 
-Several simple graph workloads sit close to their platform's control latency floor.
+Control-query latency varied materially across platforms and should be treated as contextual client-to-service overhead rather than a subtractable engine baseline.
 
 For example:
 
@@ -237,7 +237,7 @@ Its control-query latency was also dramatically lower than the other services, i
 
 CognoDB successfully loaded and queried the complete 100,000-edge graph on the small c0 free tier.
 
-Its simple query latency was very close to its control-query latency, while deeper traversal workloads moved further above that floor.
+Its control-query p50 was higher than its point-lookup p50 in this run, showing that managed-service latency was noisy. The control measurement is therefore used only as context, not as an engine-time baseline.
 
 An earlier exhaustive 3-hop pilot exceeded CognoDB's execution deadline. That result was retained rather than hidden; see [`docs/pilot_3hop_timeout.md`](docs/pilot_3hop_timeout.md).
 

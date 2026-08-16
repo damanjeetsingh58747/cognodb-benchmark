@@ -163,7 +163,8 @@ def main():
     lines.append(
         "A trivial `RETURN 1` query was measured using the same "
         "20-warm-up / 120-measured policy. It does not represent pure "
-        "network RTT, but provides a useful client-observed latency floor."
+        "network RTT and is treated only as a client-observed reference "
+        "measurement."
     )
     lines.append("")
     lines.append("| Platform | Control p50 | Control p95 |")
@@ -207,21 +208,20 @@ def main():
 
     lines.append("")
     lines.append(
-        "For CognoDB, Neo4j and ArangoDB, point-lookup p50 was very "
-        "close to each platform's control-query p50. This indicates "
-        "that simple-query results are heavily influenced by the "
-        "client-to-service path rather than query complexity alone."
+        "Neo4j's point-lookup p50 was close to its control-query p50. "
+        "CognoDB and ArangoDB showed larger differences, demonstrating "
+        "that the control measurement itself can vary materially. The "
+        "control results are therefore treated as context rather than "
+        "values to subtract from workload latency."
     )
 
     lines.append("")
     lines.append(
-        "ArangoDB's 2-hop and 3-hop workloads moved substantially "
-        "above its control latency floor, reaching "
-        f"{reads['arangodb']['workloads']['traversal_2hop']['statistics']['p50_ms']:.3f} ms "
-        "and "
-        f"{reads['arangodb']['workloads']['traversal_3hop']['statistics']['p50_ms']:.3f} ms "
-        "p50 respectively. In this run, traversal complexity therefore "
-        "had a clearly observable impact beyond baseline service latency."
+        "ArangoDB's 2-hop workload moved substantially above its control "
+        "reference, while its bounded 3-hop p50 remained much closer to "
+        "the control p50. This contrast reinforces that traversal cost "
+        "and managed-service overhead interact differently across query "
+        "shapes."
     )
 
     lines.append("")

@@ -24,7 +24,7 @@ Neo4j AuraDB produced the highest ingest throughput in this specific run. This s
 
 ## Control-query latency
 
-A trivial `RETURN 1` query was measured using the same 20-warm-up / 120-measured policy. It does not represent pure network RTT, but provides a useful client-observed latency floor.
+A trivial `RETURN 1` query was measured using the same 20-warm-up / 120-measured policy. It does not represent pure network RTT and is treated only as a client-observed reference measurement.
 
 | Platform | Control p50 | Control p95 |
 |---|---:|---:|
@@ -44,9 +44,9 @@ A trivial `RETURN 1` query was measured using the same 20-warm-up / 120-measured
 | Memgraph | 592.626 | 613.400 | 327.553 | 308.238 | 588.236 | 553.521 |
 | ArangoDB | 445.098 | 523.421 | 613.743 | 1536.090 | 614.380 | 566.317 |
 
-For CognoDB, Neo4j and ArangoDB, point-lookup p50 was very close to each platform's control-query p50. This indicates that simple-query results are heavily influenced by the client-to-service path rather than query complexity alone.
+Neo4j's point-lookup p50 was close to its control-query p50. CognoDB and ArangoDB showed larger differences, demonstrating that the control measurement itself can vary materially. The control results are therefore treated as context rather than values to subtract from workload latency.
 
-ArangoDB's 2-hop and 3-hop workloads moved substantially above its control latency floor, reaching 1536.090 ms and 614.380 ms p50 respectively. In this run, traversal complexity therefore had a clearly observable impact beyond baseline service latency.
+ArangoDB's 2-hop workload moved substantially above its control reference, while its bounded 3-hop p50 remained much closer to the control p50. This contrast reinforces that traversal cost and managed-service overhead interact differently across query shapes.
 
 CognoDB's production 3-hop workload completed successfully, but the earlier exhaustive 3-hop pilot exceeded the service execution deadline. That pilot failure is intentionally retained in `docs/pilot_3hop_timeout.md`.
 
