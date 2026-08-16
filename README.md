@@ -325,6 +325,7 @@ They do **not** answer:
 Full discussion:
 
 - [`docs/fairness.md`](docs/fairness.md)
+- [`docs/query_parity.md`](docs/query_parity.md)
 - [`docs/analysis.md`](docs/analysis.md)
 - [`docs/pilot_3hop_timeout.md`](docs/pilot_3hop_timeout.md)
 
@@ -396,6 +397,7 @@ configs/
 
 docs/
   fairness.md
+  query_parity.md
   analysis.md
   pilot_3hop_timeout.md
 
