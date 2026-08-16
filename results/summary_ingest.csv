@@ -1,6 +1,6 @@
 platform,nodes_per_second,relationships_per_second,relationship_load_seconds,end_to_end_seconds
-CognoDB,1062.59,1787.99,55.929,64.471
-Neo4j AuraDB,3438.62,5157.63,19.389,25.099
-FalkorDB,817.37,2383.87,41.949,47.922
-Memgraph,1067.37,1923.99,51.975,58.367
-ArangoDB,768.31,1236.69,80.861,104.752
+CognoDB,1220.0,2463.14,40.599,47.483
+Neo4j AuraDB,2623.64,4878.75,20.497,27.46
+FalkorDB,1399.35,2444.94,40.901,45.327
+Memgraph,1493.48,2585.82,38.672,43.209
+ArangoDB,933.22,1896.92,52.717,73.441

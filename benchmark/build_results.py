@@ -42,6 +42,7 @@ def write_csv(path, fieldnames, rows):
         writer = csv.DictWriter(
             f,
             fieldnames=fieldnames,
+            lineterminator="\n",
         )
 
         writer.writeheader()

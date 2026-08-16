@@ -1,31 +1,31 @@
 platform,workload,p50_ms,p95_ms,p99_ms,mean_ms,stdev_ms
-CognoDB,point_lookup,308.228,630.696,662.37,401.514,146.553
-CognoDB,indexed_lookup,440.36,615.559,666.26,448.404,142.401
-CognoDB,traversal_1hop,313.198,614.092,616.048,372.392,114.884
-CognoDB,traversal_2hop,614.349,1159.762,1308.379,673.83,245.937
-CognoDB,traversal_3hop,371.635,750.491,3824.87,640.928,1779.972
-CognoDB,aggregation_rating_counts,566.398,769.827,921.851,578.558,101.1
-Neo4j AuraDB,point_lookup,80.658,97.373,127.442,82.544,10.979
-Neo4j AuraDB,indexed_lookup,83.81,100.976,119.942,87.628,37.279
-Neo4j AuraDB,traversal_1hop,82.044,98.754,119.107,86.802,38.262
-Neo4j AuraDB,traversal_2hop,88.12,99.808,177.274,92.904,37.615
-Neo4j AuraDB,traversal_3hop,84.382,101.485,108.668,88.711,37.077
-Neo4j AuraDB,aggregation_rating_counts,102.925,119.293,124.754,108.768,43.642
-FalkorDB,point_lookup,262.098,425.545,512.14,291.83,65.205
-FalkorDB,indexed_lookup,308.268,615.247,666.119,396.809,172.245
-FalkorDB,traversal_1hop,343.397,623.801,644.429,421.263,151.959
-FalkorDB,traversal_2hop,374.313,615.695,669.887,418.874,148.707
-FalkorDB,traversal_3hop,413.784,615.625,659.7,443.008,145.856
-FalkorDB,aggregation_rating_counts,320.136,615.592,627.808,412.171,140.008
-Memgraph,point_lookup,592.626,615.409,623.045,494.067,138.482
-Memgraph,indexed_lookup,613.4,625.189,656.992,499.205,155.211
-Memgraph,traversal_1hop,327.553,615.6,634.975,401.187,147.594
-Memgraph,traversal_2hop,308.238,615.129,638.596,401.344,145.645
-Memgraph,traversal_3hop,588.236,629.366,640.914,488.952,161.577
-Memgraph,aggregation_rating_counts,553.521,620.881,647.952,489.805,146.391
-ArangoDB,point_lookup,445.098,616.16,697.629,451.573,154.816
-ArangoDB,indexed_lookup,523.421,624.698,650.276,473.588,147.568
-ArangoDB,traversal_1hop,613.743,616.235,624.534,514.559,135.495
-ArangoDB,traversal_2hop,1536.09,3663.503,5163.279,1783.016,1063.801
-ArangoDB,traversal_3hop,614.38,2767.919,6540.257,925.644,1067.729
-ArangoDB,aggregation_rating_counts,566.317,709.675,839.896,524.796,138.744
+CognoDB,point_lookup,275.712,547.725,614.443,319.577,89.785
+CognoDB,indexed_lookup,275.953,585.15,650.065,319.571,95.952
+CognoDB,traversal_1hop,344.946,614.84,647.238,401.68,130.435
+CognoDB,traversal_2hop,566.059,1012.647,1275.099,593.09,223.534
+CognoDB,traversal_3hop,307.629,872.171,3248.685,533.714,1643.663
+CognoDB,aggregation_rating_counts,541.324,795.258,920.819,576.11,116.071
+Neo4j AuraDB,point_lookup,80.413,92.56,149.882,82.365,12.959
+Neo4j AuraDB,indexed_lookup,81.852,91.661,95.516,84.967,35.114
+Neo4j AuraDB,traversal_1hop,79.832,91.243,379.912,87.164,60.283
+Neo4j AuraDB,traversal_2hop,87.55,101.677,111.341,90.945,35.946
+Neo4j AuraDB,traversal_3hop,81.337,92.278,95.367,84.9,35.045
+Neo4j AuraDB,aggregation_rating_counts,105.991,120.334,132.629,110.965,44.231
+FalkorDB,point_lookup,258.64,606.903,625.822,305.359,102.367
+FalkorDB,indexed_lookup,257.165,398.104,519.145,282.073,62.819
+FalkorDB,traversal_1hop,273.917,447.115,608.988,311.907,79.789
+FalkorDB,traversal_2hop,293.834,522.399,654.102,316.996,88.431
+FalkorDB,traversal_3hop,299.896,614.268,657.738,345.394,114.036
+FalkorDB,aggregation_rating_counts,310.019,606.251,627.475,358.255,105.746
+Memgraph,point_lookup,263.029,399.174,532.823,283.32,54.566
+Memgraph,indexed_lookup,263.3,387.141,524.818,285.99,58.703
+Memgraph,traversal_1hop,282.35,614.249,636.696,334.291,107.488
+Memgraph,traversal_2hop,296.922,613.917,647.653,348.18,111.421
+Memgraph,traversal_3hop,289.694,612.502,649.379,346.96,134.007
+Memgraph,aggregation_rating_counts,299.541,612.84,618.837,345.58,104.421
+ArangoDB,point_lookup,286.704,463.15,782.881,327.902,123.109
+ArangoDB,indexed_lookup,301.638,604.774,641.655,337.129,90.964
+ArangoDB,traversal_1hop,297.726,612.58,617.637,343.244,97.794
+ArangoDB,traversal_2hop,1474.932,3731.032,5568.575,1670.55,1063.215
+ArangoDB,traversal_3hop,437.303,2625.616,6306.363,799.03,1071.988
+ArangoDB,aggregation_rating_counts,340.151,568.149,730.267,383.081,103.459

@@ -1,0 +1,94 @@
+{
+  "platform": "Memgraph Cloud Free Trial",
+  "mix": {
+    "reads_percent": 90,
+    "writes_percent": 10
+  },
+  "warmup_seconds": 5,
+  "measurement_seconds": 20,
+  "concurrency_levels": [
+    1,
+    10,
+    40
+  ],
+  "results": [
+    {
+      "concurrency": 1,
+      "duration_seconds": 20.597530167084187,
+      "completed_queries": 47,
+      "read_queries": 43,
+      "write_queries": 4,
+      "errors": 0,
+      "qps": 2.2818269772512916,
+      "read_qps": 2.0876289366341605,
+      "write_qps": 0.1941980406171312,
+      "all_latency": {
+        "p50_ms": 351.703125,
+        "p95_ms": 614.6925875,
+        "mean_ms": 438.2239609148936
+      },
+      "read_latency": {
+        "p50_ms": 351.703125,
+        "p95_ms": 614.717425,
+        "mean_ms": 437.27716948837207
+      },
+      "write_latency": {
+        "p50_ms": 452.915,
+        "p95_ms": 614.5158063,
+        "mean_ms": 448.40196875000004
+      }
+    },
+    {
+      "concurrency": 10,
+      "duration_seconds": 20.588287207996473,
+      "completed_queries": 510,
+      "read_queries": 460,
+      "write_queries": 50,
+      "errors": 0,
+      "qps": 24.77136610965464,
+      "read_qps": 22.34280080478654,
+      "write_qps": 2.428565304868102,
+      "all_latency": {
+        "p50_ms": 310.984979,
+        "p95_ms": 617.2597663,
+        "mean_ms": 403.57163339215685
+      },
+      "read_latency": {
+        "p50_ms": 311.4673545,
+        "p95_ms": 617.34297435,
+        "mean_ms": 407.37220097608696
+      },
+      "write_latency": {
+        "p50_ms": 307.9956455,
+        "p95_ms": 616.6128538,
+        "mean_ms": 368.60641162
+      }
+    },
+    {
+      "concurrency": 40,
+      "duration_seconds": 20.288826666073874,
+      "completed_queries": 2240,
+      "read_queries": 2040,
+      "write_queries": 200,
+      "errors": 0,
+      "qps": 110.40559598971952,
+      "read_qps": 100.54795349063741,
+      "write_qps": 9.8576424990821,
+      "all_latency": {
+        "p50_ms": 305.879917,
+        "p95_ms": 617.4707225999999,
+        "mean_ms": 362.00180261919644
+      },
+      "read_latency": {
+        "p50_ms": 305.2885625,
+        "p95_ms": 617.57929615,
+        "mean_ms": 360.8163573127451
+      },
+      "write_latency": {
+        "p50_ms": 308.1972915,
+        "p95_ms": 617.0089607,
+        "mean_ms": 374.093344745
+      }
+    }
+  ]
+}

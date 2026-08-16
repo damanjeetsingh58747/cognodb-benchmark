@@ -1,0 +1,41 @@
+{
+  "platform": "CognoDB Cloud",
+  "dataset": "MovieLens 100K",
+  "timestamp_utc": "2026-08-16T09:15:40.349344+00:00",
+  "client": {
+    "python": "3.14.3",
+    "os": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "machine": "arm64"
+  },
+  "configuration": {
+    "batch_size": 1000,
+    "load_method": "Neo4j Python driver + parameterized UNWIND batches"
+  },
+  "dataset_counts": {
+    "users": 943,
+    "movies": 1682,
+    "nodes": 2625,
+    "relationships": 100000
+  },
+  "timings_seconds": {
+    "reset": 0.836221625097096,
+    "schema": 3.0421922497916967,
+    "user_nodes": 0.9111800419632345,
+    "movie_nodes": 1.5478909169323742,
+    "all_nodes": 2.459070958895609,
+    "relationships": 45.46559562510811,
+    "verification": 2.4554108339361846,
+    "end_to_end": 54.25880358298309
+  },
+  "throughput": {
+    "nodes_per_second": 1067.4763127530534,
+    "relationships_per_second": 2199.465301731923
+  },
+  "verification": {
+    "users": 943,
+    "movies": 1682,
+    "nodes": 2625,
+    "relationships": 100000,
+    "passed": true
+  }
+}

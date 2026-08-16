@@ -1,0 +1,94 @@
+{
+  "platform": "CognoDB Cloud",
+  "mix": {
+    "reads_percent": 90,
+    "writes_percent": 10
+  },
+  "warmup_seconds": 5,
+  "measurement_seconds": 20,
+  "concurrency_levels": [
+    1,
+    10,
+    40
+  ],
+  "results": [
+    {
+      "concurrency": 1,
+      "duration_seconds": 20.14661458414048,
+      "completed_queries": 57,
+      "read_queries": 52,
+      "write_queries": 5,
+      "errors": 0,
+      "qps": 2.829259465005634,
+      "read_qps": 2.5810788101805784,
+      "write_qps": 0.24818065482505564,
+      "all_latency": {
+        "p50_ms": 300.412792,
+        "p95_ms": 613.049625,
+        "mean_ms": 353.428155
+      },
+      "read_latency": {
+        "p50_ms": 299.2003335,
+        "p95_ms": 613.3824375,
+        "mean_ms": 357.8182115769231
+      },
+      "write_latency": {
+        "p50_ms": 301.129875,
+        "p95_ms": 355.1210996,
+        "mean_ms": 307.7715666
+      }
+    },
+    {
+      "concurrency": 10,
+      "duration_seconds": 20.288922833977267,
+      "completed_queries": 568,
+      "read_queries": 518,
+      "write_queries": 50,
+      "errors": 0,
+      "qps": 27.99557199994802,
+      "read_qps": 25.531173056290623,
+      "write_qps": 2.464398943657396,
+      "all_latency": {
+        "p50_ms": 303.851125,
+        "p95_ms": 616.9192999,
+        "mean_ms": 357.1309477605634
+      },
+      "read_latency": {
+        "p50_ms": 303.9925,
+        "p95_ms": 614.2824537,
+        "mean_ms": 353.4231365637066
+      },
+      "write_latency": {
+        "p50_ms": 302.48806249999996,
+        "p95_ms": 1041.8461955,
+        "mean_ms": 395.54387176
+      }
+    },
+    {
+      "concurrency": 40,
+      "duration_seconds": 20.301649083849043,
+      "completed_queries": 2410,
+      "read_queries": 2176,
+      "write_queries": 234,
+      "errors": 0,
+      "qps": 118.7095683728113,
+      "read_qps": 107.18341111171677,
+      "write_qps": 11.526157261094543,
+      "all_latency": {
+        "p50_ms": 290.054625,
+        "p95_ms": 591.0192893999999,
+        "mean_ms": 336.77184491037343
+      },
+      "read_latency": {
+        "p50_ms": 288.5504165,
+        "p95_ms": 583.3278439999999,
+        "mean_ms": 330.07672023483457
+      },
+      "write_latency": {
+        "p50_ms": 337.355833,
+        "p95_ms": 617.54812915,
+        "mean_ms": 399.03078206410254
+      }
+    }
+  ]
+}

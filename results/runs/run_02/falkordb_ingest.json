@@ -1,0 +1,44 @@
+{
+  "platform": "FalkorDB Cloud Free",
+  "dataset": "MovieLens 100K",
+  "timestamp_utc": "2026-08-16T09:24:20.764231+00:00",
+  "client": {
+    "python": "3.14.3",
+    "os": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "machine": "arm64"
+  },
+  "configuration": {
+    "graph_name": "wexa_benchmark",
+    "batch_size": 1000,
+    "load_method": "FalkorDB Python client + parameterized UNWIND batches",
+    "cloud": "AWS",
+    "region": "us-east-1"
+  },
+  "dataset_counts": {
+    "users": 943,
+    "movies": 1682,
+    "nodes": 2625,
+    "relationships": 100000
+  },
+  "timings_seconds": {
+    "reset": 0.23492925008758903,
+    "schema": 0.7747282502241433,
+    "user_nodes": 0.8439160420093685,
+    "movie_nodes": 1.3078430828172714,
+    "all_nodes": 2.15175912482664,
+    "relationships": 37.871333125047386,
+    "verification": 1.450447666225955,
+    "end_to_end": 42.4834966249764
+  },
+  "throughput": {
+    "nodes_per_second": 1219.9320870599247,
+    "relationships_per_second": 2640.519668790373
+  },
+  "verification": {
+    "users": 943,
+    "movies": 1682,
+    "nodes": 2625,
+    "relationships": 100000,
+    "passed": true
+  }
+}

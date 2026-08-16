@@ -23,3 +23,6 @@ jobs:
 
       - name: Audit committed benchmark evidence
         run: python benchmark/audit_results.py
+
+      - name: Audit repeated benchmark evidence
+        run: python benchmark/audit_repeated_results.py

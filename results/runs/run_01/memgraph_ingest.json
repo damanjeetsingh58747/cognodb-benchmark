@@ -1,0 +1,41 @@
+{
+  "platform": "Memgraph Cloud Free Trial",
+  "dataset": "MovieLens 100K",
+  "timestamp_utc": "2026-08-16T00:54:54.990552+00:00",
+  "client": {
+    "python": "3.14.3",
+    "os": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "machine": "arm64"
+  },
+  "configuration": {
+    "batch_size": 1000,
+    "load_method": "Neo4j Python driver + parameterized UNWIND batches"
+  },
+  "dataset_counts": {
+    "users": 943,
+    "movies": 1682,
+    "nodes": 2625,
+    "relationships": 100000
+  },
+  "timings_seconds": {
+    "reset": 0.6123373329173774,
+    "schema": 2.1503534999210387,
+    "user_nodes": 1.2617395829875022,
+    "movie_nodes": 1.1975857499055564,
+    "all_nodes": 2.4593253328930587,
+    "relationships": 51.97542362497188,
+    "verification": 1.1687786250840873,
+    "end_to_end": 58.36657266691327
+  },
+  "throughput": {
+    "nodes_per_second": 1067.365901083143,
+    "relationships_per_second": 1923.9862424508349
+  },
+  "verification": {
+    "users": 943,
+    "movies": 1682,
+    "nodes": 2625,
+    "relationships": 100000,
+    "passed": true
+  }
+}

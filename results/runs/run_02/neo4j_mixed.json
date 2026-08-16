@@ -1,0 +1,94 @@
+{
+  "platform": "Neo4j AuraDB Free",
+  "mix": {
+    "reads_percent": 90,
+    "writes_percent": 10
+  },
+  "warmup_seconds": 5,
+  "measurement_seconds": 20,
+  "concurrency_levels": [
+    1,
+    10,
+    40
+  ],
+  "results": [
+    {
+      "concurrency": 1,
+      "duration_seconds": 20.05842625000514,
+      "completed_queries": 235,
+      "read_queries": 212,
+      "write_queries": 23,
+      "errors": 0,
+      "qps": 11.715774561323812,
+      "read_qps": 10.56912428510914,
+      "write_qps": 1.1466502762146709,
+      "all_latency": {
+        "p50_ms": 83.533917,
+        "p95_ms": 95.10959989999999,
+        "mean_ms": 85.34562339148937
+      },
+      "read_latency": {
+        "p50_ms": 83.1620835,
+        "p95_ms": 93.48173384999998,
+        "mean_ms": 85.03739799528302
+      },
+      "write_latency": {
+        "p50_ms": 87.81,
+        "p95_ms": 95.7307327,
+        "mean_ms": 88.18665747826087
+      }
+    },
+    {
+      "concurrency": 10,
+      "duration_seconds": 20.07968591689132,
+      "completed_queries": 2417,
+      "read_queries": 2179,
+      "write_queries": 238,
+      "errors": 0,
+      "qps": 120.37040868088404,
+      "read_qps": 108.5176336432132,
+      "write_qps": 11.852775037670831,
+      "all_latency": {
+        "p50_ms": 79.764541,
+        "p95_ms": 98.21409219999995,
+        "mean_ms": 82.96802125403393
+      },
+      "read_latency": {
+        "p50_ms": 79.450792,
+        "p95_ms": 97.2754503,
+        "mean_ms": 82.766244186324
+      },
+      "write_latency": {
+        "p50_ms": 82.91033300000001,
+        "p95_ms": 103.9027473,
+        "mean_ms": 84.81538356722689
+      }
+    },
+    {
+      "concurrency": 40,
+      "duration_seconds": 20.520494875032455,
+      "completed_queries": 3054,
+      "read_queries": 2774,
+      "write_queries": 280,
+      "errors": 0,
+      "qps": 148.82682014242457,
+      "read_qps": 135.181925040958,
+      "write_qps": 13.64489510146656,
+      "all_latency": {
+        "p50_ms": 86.983104,
+        "p95_ms": 1629.142841449993,
+        "mean_ms": 265.765675624427
+      },
+      "read_latency": {
+        "p50_ms": 86.6254165,
+        "p95_ms": 1387.1605601999972,
+        "mean_ms": 259.12874045097334
+      },
+      "write_latency": {
+        "p50_ms": 91.8640625,
+        "p95_ms": 2268.610616350001,
+        "mean_ms": 331.5187405214286
+      }
+    }
+  ]
+}

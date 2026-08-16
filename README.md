@@ -127,15 +127,29 @@ Temporary benchmark-write records are removed between phases.
 
 # Results
 
+## Repeated-trial summary
+
+Three separate full benchmark executions were archived to measure run-to-run variability. Aggregate values are reported as mean +/- sample standard deviation of the per-run metrics; latency percentiles are not pooled across runs.
+
+See [`results/REPEATED_RUNS.md`](results/REPEATED_RUNS.md) for the full three-run analysis and repeated-run charts.
+
+One Neo4j concurrency-40 execution showed a pronounced throughput/latency degradation. It is retained and included in the aggregate rather than discarded as an outlier.
+
+![Repeated mixed QPS](charts/repeated_mixed_qps_mean_std.png)
+
+The tables below show the latest individual execution; use the repeated-run report for variability-aware interpretation.
+
+---
+
 ## 1. Relationship ingest throughput
 
 | Platform | Nodes/s | Relationships/s | Relationship load | End-to-end |
 |---|---:|---:|---:|---:|
-| CognoDB | 1,062.6 | 1,788.0 | 55.929 s | 64.471 s |
-| Neo4j AuraDB | 3,438.6 | 5,157.6 | 19.389 s | 25.099 s |
-| FalkorDB | 817.4 | 2,383.9 | 41.949 s | 47.922 s |
-| Memgraph | 1,067.4 | 1,924.0 | 51.975 s | 58.367 s |
-| ArangoDB | 768.3 | 1,236.7 | 80.861 s | 104.752 s |
+| CognoDB | 1,220.0 | 2,463.1 | 40.599 s | 47.483 s |
+| Neo4j AuraDB | 2,623.6 | 4,878.8 | 20.497 s | 27.460 s |
+| FalkorDB | 1,399.4 | 2,444.9 | 40.901 s | 45.327 s |
+| Memgraph | 1,493.5 | 2,585.8 | 38.672 s | 43.209 s |
+| ArangoDB | 933.2 | 1,896.9 | 52.717 s | 73.441 s |
 
 ![Relationship ingest throughput](charts/ingest_relationship_throughput.png)
 
@@ -147,11 +161,11 @@ In this run, **Neo4j AuraDB recorded the highest relationship ingest throughput*
 
 | Platform | Point | Indexed | 1-hop | 2-hop | 3-hop | Aggregation |
 |---|---:|---:|---:|---:|---:|---:|
-| CognoDB | 308.228 ms | 440.360 ms | 313.198 ms | 614.349 ms | 371.635 ms | 566.398 ms |
-| Neo4j AuraDB | 80.658 ms | 83.810 ms | 82.044 ms | 88.120 ms | 84.382 ms | 102.925 ms |
-| FalkorDB | 262.098 ms | 308.268 ms | 343.397 ms | 374.313 ms | 413.784 ms | 320.136 ms |
-| Memgraph | 592.626 ms | 613.400 ms | 327.553 ms | 308.238 ms | 588.236 ms | 553.521 ms |
-| ArangoDB | 445.098 ms | 523.421 ms | 613.743 ms | 1536.090 ms | 614.380 ms | 566.317 ms |
+| CognoDB | 275.712 ms | 275.953 ms | 344.946 ms | 566.059 ms | 307.629 ms | 541.324 ms |
+| Neo4j AuraDB | 80.413 ms | 81.852 ms | 79.832 ms | 87.550 ms | 81.337 ms | 105.991 ms |
+| FalkorDB | 258.640 ms | 257.165 ms | 273.917 ms | 293.834 ms | 299.896 ms | 310.019 ms |
+| Memgraph | 263.029 ms | 263.300 ms | 282.350 ms | 296.922 ms | 289.694 ms | 299.541 ms |
+| ArangoDB | 286.704 ms | 301.638 ms | 297.726 ms | 1474.932 ms | 437.303 ms | 340.151 ms |
 
 ![Read p50 latency](charts/read_p50_ms.png)
 
@@ -161,11 +175,11 @@ In this run, **Neo4j AuraDB recorded the highest relationship ingest throughput*
 
 | Platform | Point | Indexed | 1-hop | 2-hop | 3-hop | Aggregation |
 |---|---:|---:|---:|---:|---:|---:|
-| CognoDB | 630.696 ms | 615.559 ms | 614.092 ms | 1159.762 ms | 750.491 ms | 769.827 ms |
-| Neo4j AuraDB | 97.373 ms | 100.976 ms | 98.754 ms | 99.808 ms | 101.485 ms | 119.293 ms |
-| FalkorDB | 425.545 ms | 615.247 ms | 623.801 ms | 615.695 ms | 615.625 ms | 615.592 ms |
-| Memgraph | 615.409 ms | 625.189 ms | 615.600 ms | 615.129 ms | 629.366 ms | 620.881 ms |
-| ArangoDB | 616.160 ms | 624.698 ms | 616.235 ms | 3663.503 ms | 2767.919 ms | 709.675 ms |
+| CognoDB | 547.725 ms | 585.150 ms | 614.840 ms | 1012.647 ms | 872.171 ms | 795.258 ms |
+| Neo4j AuraDB | 92.560 ms | 91.661 ms | 91.243 ms | 101.677 ms | 92.278 ms | 120.334 ms |
+| FalkorDB | 606.903 ms | 398.104 ms | 447.115 ms | 522.399 ms | 614.268 ms | 606.251 ms |
+| Memgraph | 399.174 ms | 387.141 ms | 614.249 ms | 613.917 ms | 612.502 ms | 612.840 ms |
+| ArangoDB | 463.150 ms | 604.774 ms | 612.580 ms | 3731.032 ms | 2625.616 ms | 568.149 ms |
 
 ![Read p95 latency](charts/read_p95_ms.png)
 
@@ -175,11 +189,11 @@ In this run, **Neo4j AuraDB recorded the highest relationship ingest throughput*
 
 | Platform | C=1 | C=10 | C=40 |
 |---|---:|---:|---:|
-| CognoDB | 2.12 QPS | 22.19 QPS | 86.90 QPS |
-| Neo4j AuraDB | 12.09 QPS | 126.47 QPS | 465.27 QPS |
-| FalkorDB | 2.76 QPS | 25.75 QPS | 91.31 QPS |
-| Memgraph | 2.28 QPS | 24.77 QPS | 110.41 QPS |
-| ArangoDB | 1.94 QPS | 18.23 QPS | 75.28 QPS |
+| CognoDB | 3.38 QPS | 35.86 QPS | 137.57 QPS |
+| Neo4j AuraDB | 12.81 QPS | 101.64 QPS | 462.18 QPS |
+| FalkorDB | 3.77 QPS | 39.57 QPS | 158.92 QPS |
+| Memgraph | 3.51 QPS | 38.20 QPS | 149.51 QPS |
+| ArangoDB | 3.14 QPS | 31.44 QPS | 111.20 QPS |
 
 ![Mixed QPS scaling](charts/mixed_qps_scaling.png)
 
@@ -201,11 +215,11 @@ This is **not pure network RTT**, but it helps expose the baseline client-to-man
 
 | Platform | Control p50 | Control p95 |
 |---|---:|---:|
-| CognoDB | 613.511 ms | 615.354 ms |
-| Neo4j AuraDB | 77.829 ms | 84.867 ms |
-| FalkorDB | 307.972 ms | 615.044 ms |
-| Memgraph | 313.135 ms | 615.312 ms |
-| ArangoDB | 613.849 ms | 616.552 ms |
+| CognoDB | 285.905 ms | 480.437 ms |
+| Neo4j AuraDB | 74.486 ms | 88.983 ms |
+| FalkorDB | 270.245 ms | 571.603 ms |
+| Memgraph | 266.269 ms | 539.151 ms |
+| ArangoDB | 294.692 ms | 523.225 ms |
 
 ### Why this matters
 
@@ -213,11 +227,11 @@ Control-query latency varied materially across platforms and should be treated a
 
 For example:
 
-- CognoDB control p50: **613.511 ms**
-- CognoDB point lookup p50: **308.228 ms**
+- CognoDB control p50: **285.905 ms**
+- CognoDB point lookup p50: **275.712 ms**
 
-- Neo4j control p50: **77.829 ms**
-- Neo4j point lookup p50: **80.658 ms**
+- Neo4j control p50: **74.486 ms**
+- Neo4j point lookup p50: **80.413 ms**
 
 That makes it unsafe to attribute the entire observed query latency to the graph engine itself.
 

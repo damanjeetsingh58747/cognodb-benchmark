@@ -1,0 +1,46 @@
+{
+  "platform": "ArangoDB Managed Platform Trial",
+  "dataset": "MovieLens 100K",
+  "timestamp_utc": "2026-08-16T09:34:36.531797+00:00",
+  "client": {
+    "python": "3.14.3",
+    "os": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "machine": "arm64"
+  },
+  "configuration": {
+    "batch_size": 1000,
+    "load_method": "python-arango + parameterized AQL batches",
+    "query_language": "AQL",
+    "cloud": "Google Cloud Platform",
+    "region": "Iowa, USA",
+    "server_version": "3.12.10"
+  },
+  "dataset_counts": {
+    "users": 943,
+    "movies": 1682,
+    "nodes": 2625,
+    "relationships": 100000
+  },
+  "timings_seconds": {
+    "reset": 1.793487791903317,
+    "schema": 1.9657621250953525,
+    "user_nodes": 1.441730665974319,
+    "movie_nodes": 1.3918277909979224,
+    "all_nodes": 2.8335584569722414,
+    "relationships": 42.93766070809215,
+    "verification": 13.974864959018305,
+    "end_to_end": 63.505644750082865
+  },
+  "throughput": {
+    "nodes_per_second": 926.3969809907879,
+    "relationships_per_second": 2328.957804195274
+  },
+  "verification": {
+    "users": 943,
+    "movies": 1682,
+    "nodes": 2625,
+    "relationships": 100000,
+    "missing_endpoints": 0,
+    "passed": true
+  }
+}
