@@ -28,23 +28,22 @@ jobs:
             -o smorffi_transfer/data/123_devices_merged_first_features_clean.csv \
             https://raw.githubusercontent.com/axbkts/SMORFFI-Extra-Feature-Extraction/main/123_devices_merged_first_features_clean.csv
           sha256sum smorffi_transfer/data/123_devices_merged_first_features_clean.csv | tee smorffi_transfer/input_sha256.txt
-          python - <<'PY'
-          import pandas as pd
-          p='smorffi_transfer/data/123_devices_merged_first_features_clean.csv'
-          d=pd.read_csv(p,nrows=3)
-          print(d.columns.tolist())
-          print(d[['Device Number']].head())
-          PY
       - name: Run pre-frozen PORS and S-PORS evaluation
         run: |
           mkdir -p smorffi_transfer/results
           python smorffi_transfer/run_smorffi_pors_frozen.py \
             smorffi_transfer/data/123_devices_merged_first_features_clean.csv \
             --outdir smorffi_transfer/results | tee smorffi_transfer/results/run_log.txt
+      - name: Post-unseal physical-device cluster bootstrap
+        run: |
+          mkdir -p smorffi_transfer/bootstrap_results
+          python smorffi_transfer/smorffi_cluster_bootstrap.py \
+            smorffi_transfer/data/123_devices_merged_first_features_clean.csv \
+            --outdir smorffi_transfer/bootstrap_results | tee smorffi_transfer/bootstrap_results/run_log.txt
       - name: Hash result files
         if: always()
         run: |
-          find smorffi_transfer/results -type f -maxdepth 1 -print0 | sort -z | xargs -0 sha256sum > smorffi_transfer/results/result_sha256.txt || true
+          find smorffi_transfer/results smorffi_transfer/bootstrap_results -type f -maxdepth 1 -print0 | sort -z | xargs -0 sha256sum > smorffi_transfer/result_sha256.txt || true
       - name: Upload measured-transfer results
         if: always()
         uses: actions/upload-artifact@v4
@@ -52,5 +51,7 @@ jobs:
           name: smorffi-frozen-transfer-results
           path: |
             smorffi_transfer/results
+            smorffi_transfer/bootstrap_results
             smorffi_transfer/input_sha256.txt
+            smorffi_transfer/result_sha256.txt
           if-no-files-found: warn
