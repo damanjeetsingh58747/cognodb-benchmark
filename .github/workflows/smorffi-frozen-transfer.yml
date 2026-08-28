@@ -1,0 +1,56 @@
+name: SMoRFFI Frozen PORS Transfer
+
+on:
+  push:
+    branches:
+      - smorffi-frozen-transfer-20260828
+  workflow_dispatch:
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - name: Checkout experiment branch
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install numpy pandas scikit-learn scipy
+      - name: Download frozen SMoRFFI feature table
+        run: |
+          mkdir -p smorffi_transfer/data
+          curl -L --fail --retry 5 --retry-delay 5 \
+            -o smorffi_transfer/data/123_devices_merged_first_features_clean.csv \
+            https://raw.githubusercontent.com/axbkts/SMORFFI-Extra-Feature-Extraction/main/123_devices_merged_first_features_clean.csv
+          sha256sum smorffi_transfer/data/123_devices_merged_first_features_clean.csv | tee smorffi_transfer/input_sha256.txt
+          python - <<'PY'
+          import pandas as pd
+          p='smorffi_transfer/data/123_devices_merged_first_features_clean.csv'
+          d=pd.read_csv(p,nrows=3)
+          print(d.columns.tolist())
+          print(d[['Device Number']].head())
+          PY
+      - name: Run pre-frozen PORS and S-PORS evaluation
+        run: |
+          mkdir -p smorffi_transfer/results
+          python smorffi_transfer/run_smorffi_pors_frozen.py \
+            smorffi_transfer/data/123_devices_merged_first_features_clean.csv \
+            --outdir smorffi_transfer/results | tee smorffi_transfer/results/run_log.txt
+      - name: Hash result files
+        if: always()
+        run: |
+          find smorffi_transfer/results -type f -maxdepth 1 -print0 | sort -z | xargs -0 sha256sum > smorffi_transfer/results/result_sha256.txt || true
+      - name: Upload measured-transfer results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: smorffi-frozen-transfer-results
+          path: |
+            smorffi_transfer/results
+            smorffi_transfer/input_sha256.txt
+          if-no-files-found: warn
